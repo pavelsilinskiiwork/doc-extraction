@@ -1,0 +1,31 @@
+{
+  "vendor": "M\u00fcller Maschinenbau GmbH",
+  "invoice_number": "RE-88213",
+  "invoice_date": "2026-01-15",
+  "due_date": "2026-02-14",
+  "currency": "EUR",
+  "line_items": [
+    {
+      "description": "Wartung F\u00f6rderband",
+      "quantity": "1",
+      "unit_price": "1250.00",
+      "amount": "1250.00"
+    },
+    {
+      "description": "Ersatzteil Lager 6204",
+      "quantity": "6",
+      "unit_price": "34.80",
+      "amount": "208.80"
+    },
+    {
+      "description": "Anfahrtspauschale",
+      "quantity": "1",
+      "unit_price": "85.00",
+      "amount": "85.00"
+    }
+  ],
+  "subtotal": "1543.80",
+  "discount": "0",
+  "tax": "293.32",
+  "total": "1837.12"
+}

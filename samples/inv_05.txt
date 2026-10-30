@@ -1,0 +1,20 @@
+Kestrel Cloud Services Inc.
+INVOICE
+
+Invoice #: KCS-0099321
+Invoice date: June 1, 2026
+Due date: June 16, 2026
+
+Bill to: Acme Holdings, 100 Main St, Boston MA
+
+Description                             Qty    Unit price        Amount
+Compute instances (monthly)               8       $212.40     $1,699.20
+Object storage 5 TB                       1       $115.00       $115.00
+Premium support                           1       $299.00       $299.00
+
+Subtotal: $2,113.20
+Discount: -$150.00
+Sales tax (6.25%): $122.70
+TOTAL DUE: $2,085.90
+
+Thank you for your business.

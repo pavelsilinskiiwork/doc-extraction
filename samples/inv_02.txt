@@ -1,0 +1,19 @@
+Müller Maschinenbau GmbH
+RECHNUNG
+
+Rechnungsnummer: RE-88213
+Rechnungsdatum: 15.01.2026
+Zahlbar bis: 14.02.2026
+
+Rechnungsempfänger: Beispiel Handels GmbH, Berlin
+
+Pos. Beschreibung | Menge | Einzelpreis | Betrag
+1. Wartung Förderband | 1 | 1.250,00 € | 1.250,00 €
+2. Ersatzteil Lager 6204 | 6 | 34,80 € | 208,80 €
+3. Anfahrtspauschale | 1 | 85,00 € | 85,00 €
+
+Zwischensumme (netto): 1.543,80 €
+MwSt. 19%: 293,32 €
+Rechnungsbetrag: 1.837,12 €
+
+Vielen Dank für Ihren Auftrag.

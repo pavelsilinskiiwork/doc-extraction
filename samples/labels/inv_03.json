@@ -1,0 +1,25 @@
+{
+  "vendor": "Brightwater Catering Ltd",
+  "invoice_number": "BC/7731",
+  "invoice_date": "2026-05-22",
+  "due_date": "2026-06-21",
+  "currency": "GBP",
+  "line_items": [
+    {
+      "description": "Buffet lunch (per head)",
+      "quantity": "45",
+      "unit_price": "14.50",
+      "amount": "652.50"
+    },
+    {
+      "description": "Coffee and tea service",
+      "quantity": "1",
+      "unit_price": "120.00",
+      "amount": "120.00"
+    }
+  ],
+  "subtotal": "772.50",
+  "discount": "0",
+  "tax": "154.50",
+  "total": "927.00"
+}

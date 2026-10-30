@@ -1,0 +1,19 @@
+Northwind Office Supply LLC
+INVOICE
+
+Invoice #: NW-2026-0412
+Invoice date: March 4, 2026
+Due date: April 3, 2026
+
+Bill to: Acme Holdings, 100 Main St, Boston MA
+
+Description                             Qty    Unit price        Amount
+Ergonomic office chair                    4       $189.00       $756.00
+Standing desk converter                   2       $249.50       $499.00
+Cable management kit                     10        $12.90       $129.00
+
+Subtotal: $1,384.00
+Sales tax (8%): $110.72
+TOTAL DUE: $1,494.72
+
+Thank you for your business.

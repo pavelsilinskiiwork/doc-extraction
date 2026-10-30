@@ -1,0 +1,18 @@
+Schneider Druck & Medien AG
+RECHNUNG
+
+Rechnungsnummer: 2026/0457
+Rechnungsdatum: 09.07.2026
+Zahlbar bis: 23.07.2026
+
+Rechnungsempfänger: Beispiel Handels GmbH, Berlin
+
+Pos. Beschreibung | Menge | Einzelpreis | Betrag
+1. Broschüren A5, 500 Stück | 2 | 389,90 € | 779,80 €
+2. Visitenkarten, 250 Stück | 4 | 27,50 € | 110,00 €
+
+Zwischensumme (netto): 889,80 €
+MwSt. 7%: 62,29 €
+Rechnungsbetrag: 952,09 €
+
+Vielen Dank für Ihren Auftrag.

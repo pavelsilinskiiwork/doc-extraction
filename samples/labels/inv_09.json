@@ -1,0 +1,31 @@
+{
+  "vendor": "Cobalt Freight Logistics",
+  "invoice_number": "CF-55102",
+  "invoice_date": "2026-09-03",
+  "due_date": "2026-10-03",
+  "currency": "USD",
+  "line_items": [
+    {
+      "description": "Pallet freight, Boston to Chicago",
+      "quantity": "6",
+      "unit_price": "412.00",
+      "amount": "2472.00"
+    },
+    {
+      "description": "Liftgate service",
+      "quantity": "6",
+      "unit_price": "35.00",
+      "amount": "210.00"
+    },
+    {
+      "description": "Fuel surcharge",
+      "quantity": "1",
+      "unit_price": "148.20",
+      "amount": "148.20"
+    }
+  ],
+  "subtotal": "2830.20",
+  "discount": "0",
+  "tax": "0.00",
+  "total": "2830.20"
+}

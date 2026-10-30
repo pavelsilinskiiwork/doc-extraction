@@ -1,0 +1,25 @@
+{
+  "vendor": "Schneider Druck & Medien AG",
+  "invoice_number": "2026/0457",
+  "invoice_date": "2026-07-09",
+  "due_date": "2026-07-23",
+  "currency": "EUR",
+  "line_items": [
+    {
+      "description": "Brosch\u00fcren A5, 500 St\u00fcck",
+      "quantity": "2",
+      "unit_price": "389.90",
+      "amount": "779.80"
+    },
+    {
+      "description": "Visitenkarten, 250 St\u00fcck",
+      "quantity": "4",
+      "unit_price": "27.50",
+      "amount": "110.00"
+    }
+  ],
+  "subtotal": "889.80",
+  "discount": "0",
+  "tax": "62.29",
+  "total": "952.09"
+}

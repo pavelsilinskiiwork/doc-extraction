@@ -1,0 +1,18 @@
+Harbour Street Dental Supplies
+TAX INVOICE no. HSDS-20491
+
+Date of issue: 12/08/2026
+Payment due by: 11/09/2026
+
+Customer: Elmwood Primary School, Bristol
+
+Item | Quantity | Price | Line total
+Nitrile gloves (box of 100) | 24 | £6.85 | £164.40
+Disposable bibs (pack of 500) | 3 | £21.40 | £64.20
+Sterilisation pouches | 12 | £9.15 | £109.80
+
+Net: £338.40
+VAT @ 20%: £67.68
+Gross total payable: £406.08
+
+Bank transfer preferred. Sort code 20-00-00.

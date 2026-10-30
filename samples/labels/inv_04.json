@@ -1,0 +1,25 @@
+{
+  "vendor": "Alder & Finch Consulting",
+  "invoice_number": "2026-117",
+  "invoice_date": "2026-02-27",
+  "due_date": null,
+  "currency": "USD",
+  "line_items": [
+    {
+      "description": "Strategy workshop (day)",
+      "quantity": "3",
+      "unit_price": "2400.00",
+      "amount": "7200.00"
+    },
+    {
+      "description": "Report preparation (hour)",
+      "quantity": "12",
+      "unit_price": "150.00",
+      "amount": "1800.00"
+    }
+  ],
+  "subtotal": "9000.00",
+  "discount": "0",
+  "tax": "0.00",
+  "total": "9000.00"
+}

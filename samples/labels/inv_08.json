@@ -1,0 +1,25 @@
+{
+  "vendor": "Pinecrest Landscaping",
+  "invoice_number": "PL-3318",
+  "invoice_date": "2026-04-30",
+  "due_date": null,
+  "currency": "USD",
+  "line_items": [
+    {
+      "description": "Spring cleanup and mulching",
+      "quantity": "1",
+      "unit_price": "1850.00",
+      "amount": "1850.00"
+    },
+    {
+      "description": "Shrub replacement",
+      "quantity": "7",
+      "unit_price": "46.00",
+      "amount": "322.00"
+    }
+  ],
+  "subtotal": "2172.00",
+  "discount": "0",
+  "tax": "152.04",
+  "total": "2324.04"
+}

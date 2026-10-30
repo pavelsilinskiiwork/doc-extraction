@@ -1,0 +1,19 @@
+Lindqvist Design Studio
+RECHNUNG
+
+Rechnungsnummer: LDS-0073
+Rechnungsdatum: 01.10.2026
+Zahlbar bis: 31.10.2026
+
+Rechnungsempfänger: Beispiel Handels GmbH, Berlin
+
+Pos. Beschreibung | Menge | Einzelpreis | Betrag
+1. Brand identity package | 1 | 4.800,00 € | 4.800,00 €
+2. Website mockups (page) | 8 | 310,00 € | 2.480,00 €
+
+Zwischensumme (netto): 7.280,00 €
+Rabatt: -200,00 €
+MwSt. 25%: 1.770,00 €
+Rechnungsbetrag: 8.850,00 €
+
+Vielen Dank für Ihren Auftrag.

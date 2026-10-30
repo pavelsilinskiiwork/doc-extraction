@@ -1,0 +1,31 @@
+{
+  "vendor": "Kestrel Cloud Services Inc.",
+  "invoice_number": "KCS-0099321",
+  "invoice_date": "2026-06-01",
+  "due_date": "2026-06-16",
+  "currency": "USD",
+  "line_items": [
+    {
+      "description": "Compute instances (monthly)",
+      "quantity": "8",
+      "unit_price": "212.40",
+      "amount": "1699.20"
+    },
+    {
+      "description": "Object storage 5 TB",
+      "quantity": "1",
+      "unit_price": "115.00",
+      "amount": "115.00"
+    },
+    {
+      "description": "Premium support",
+      "quantity": "1",
+      "unit_price": "299.00",
+      "amount": "299.00"
+    }
+  ],
+  "subtotal": "2113.20",
+  "discount": "150.00",
+  "tax": "122.70",
+  "total": "2085.90"
+}

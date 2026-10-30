@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+python-multipart
+pypdf
+pydantic
+anthropic
+httpx
+python-dotenv
+boto3

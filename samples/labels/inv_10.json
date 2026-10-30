@@ -1,0 +1,25 @@
+{
+  "vendor": "Lindqvist Design Studio",
+  "invoice_number": "LDS-0073",
+  "invoice_date": "2026-10-01",
+  "due_date": "2026-10-31",
+  "currency": "EUR",
+  "line_items": [
+    {
+      "description": "Brand identity package",
+      "quantity": "1",
+      "unit_price": "4800.00",
+      "amount": "4800.00"
+    },
+    {
+      "description": "Website mockups (page)",
+      "quantity": "8",
+      "unit_price": "310.00",
+      "amount": "2480.00"
+    }
+  ],
+  "subtotal": "7280.00",
+  "discount": "200.00",
+  "tax": "1770.00",
+  "total": "8850.00"
+}

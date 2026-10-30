@@ -1,0 +1,31 @@
+{
+  "vendor": "Harbour Street Dental Supplies",
+  "invoice_number": "HSDS-20491",
+  "invoice_date": "2026-08-12",
+  "due_date": "2026-09-11",
+  "currency": "GBP",
+  "line_items": [
+    {
+      "description": "Nitrile gloves (box of 100)",
+      "quantity": "24",
+      "unit_price": "6.85",
+      "amount": "164.40"
+    },
+    {
+      "description": "Disposable bibs (pack of 500)",
+      "quantity": "3",
+      "unit_price": "21.40",
+      "amount": "64.20"
+    },
+    {
+      "description": "Sterilisation pouches",
+      "quantity": "12",
+      "unit_price": "9.15",
+      "amount": "109.80"
+    }
+  ],
+  "subtotal": "338.40",
+  "discount": "0",
+  "tax": "67.68",
+  "total": "406.08"
+}
