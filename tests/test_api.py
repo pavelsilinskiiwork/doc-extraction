@@ -13,7 +13,7 @@ def use(monkeypatch, provider):
 
 
 def test_health():
-    assert client.get("/health").json() == {"status": "ok"}
+    assert client.get("/health").json() == {"status": "ok", "storage": False}
 
 
 def test_extract_text_invoice(monkeypatch):

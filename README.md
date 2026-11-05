@@ -16,6 +16,10 @@ Anthropic Claude, Groq and AWS Bedrock behind one interface.
 .pdf / .txt -> text (pypdf) -> LLM -> JSON -> Pydantic validation -> Invoice
                                   ^                  |
                                   +-- validation errors (max 3 attempts)
+                                                     |
+                                  PostgreSQL <-------+   every run is saved
+                                      |
+                       review queue -> approve / correct -> accuracy per provider
 ```
 
 - **Schema** (`schemas.py`): vendor, invoice number, dates, currency (ISO code), line items,
@@ -62,6 +66,51 @@ curl -F "file=@samples/inv_02.txt" http://127.0.0.1:8000/extract
 | 422 | Unsupported or unreadable file, or the model never produced a valid invoice (errors listed) |
 | 429 / 502 | Provider rate limit / provider failure |
 
+## Storage and review
+
+Set `DATABASE_URL` and every `/extract` call is saved, including failed ones, with the original document text,
+the model's answer, tokens and cost. Without it the API stays stateless, as before.
+
+```bash
+docker compose up --build      # API on http://localhost:8000/docs + PostgreSQL 16 with a persistent volume
+```
+
+Without Docker, `DATABASE_URL=sqlite:///extractions.db` gives the same behaviour in a local file.
+
+**What gets saved.** `extractions` (one row per run) and `line_items`. The model's answer is stored untouched in
+`invoice`; a reviewer's fix goes to `corrected_invoice`. The flat columns (`vendor`, `invoice_number`, `invoice_date`,
+`currency`, `total`) and the line items always show the current best version, so SQL queries see corrected data
+while the original answer stays available for measuring the model.
+
+**Review queue.** A run is flagged `needs_review`, with the reasons listed, when:
+
+- the first answer failed validation and a retry was needed, or no valid invoice was produced
+- the total is at or above `REVIEW_TOTAL_THRESHOLD` (default 10000, in the invoice's own currency)
+- the document contains text that reads like an instruction to the model
+- the same vendor and invoice number were already extracted (possible duplicate)
+
+Validation proves the numbers add up; it cannot prove that a vendor name was copied correctly. These rules point a
+person at the runs where a mistake is likelier or costlier.
+
+| Endpoint | Purpose |
+| --- | --- |
+| `GET /extractions?review_status=needs_review` | The queue (`ok`, `needs_review`, `approved`, `corrected`, `rejected`; also `status=failed`; paged) |
+| `GET /extractions/{id}` | Original text, model output, corrections, line items |
+| `POST /extractions/{id}/approve` | The model was right |
+| `PUT /extractions/{id}/correction` | Submit the right invoice; it passes the same validation as model output, and also works for runs that failed |
+| `POST /extractions/{id}/reject` | Not an invoice / unusable |
+| `GET /stats/accuracy` | Accuracy per provider and model from review decisions |
+
+Set `API_KEY` to require an `X-API-Key` header on everything except `/health`. The stored invoices are business data:
+do not expose the service without it. Tables are created on startup; a schema that keeps changing would need
+Alembic migrations. If the database is down, `/extract` still returns the extraction (without an `id`) and logs the error.
+
+**Accuracy table.** `python accuracy_report.py` prints Markdown tables built from reviewed runs: for each provider and
+model, runs, failed validation, retries, reviewed, corrected, share of fully correct invoices, average cost, and
+accuracy per field. It uses the same scoring as the labelled evaluation below, but on documents that went through the
+live service. Two limits: only reviewed runs count, and the queue holds the risky ones, so this is harsher than accuracy
+on everything. Approving or correcting a few unflagged (`ok`) runs balances it. The table fills as documents are reviewed.
+
 ## Evaluation
 
 `samples/` holds 10 synthetic invoices with ground-truth labels (4 also as PDF). They differ on purpose:
@@ -104,11 +153,13 @@ pip install -r requirements-dev.txt
 python -m pytest -v
 ```
 
-The tests use a scripted provider, so they run offline and cost nothing. They cover the schema rules, the
-retry loop, file reading, scoring and the API.
+The tests use a scripted provider, so they run offline and cost nothing (63 tests). They cover the schema rules, the
+retry loop, file reading, scoring, the API, the review rules, storage (in-memory SQLite) and the accuracy statistics.
+The storage layer was also checked by hand against PostgreSQL 16.
 
 ## Limitations and next steps
 
 - Invoices only; text-based PDFs only (scanned documents need OCR)
 - Synthetic samples: a first measurement, not a claim about real-world invoices
-- Next: store results in PostgreSQL (Docker Compose), review and correction endpoints, accuracy per provider
+- Review is API-only; there is no web UI for it yet
+- Next: harder documents (scans, multi-page), a simple review page, Alembic migrations

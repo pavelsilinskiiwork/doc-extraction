@@ -1,0 +1,33 @@
+# docker compose up --build
+# API: http://localhost:8000/docs   (PostgreSQL is reachable only from inside the compose network)
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: extract
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-extract}
+      POSTGRES_DB: extractions
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U extract -d extractions"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  api:
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - path: .env        # provider keys; the file may be absent (needs Docker Compose 2.24+)
+        required: false
+    environment:
+      DATABASE_URL: postgresql+psycopg://extract:${POSTGRES_PASSWORD:-extract}@db:5432/extractions
+    ports:
+      - "127.0.0.1:8000:8000"  # localhost only; put a reverse proxy and API_KEY in front to expose it
+
+volumes:
+  pgdata:
